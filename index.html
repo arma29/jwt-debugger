@@ -15,11 +15,15 @@
             <strong>Warning:</strong> The boss will appear
         </div>
         <div class="selections">
-            <span>ALGORITHM</span>
-            <select id="algorithm-select">
-                <option>Alg1</option>
-                <option>Alg2</option>
-            </select>
+            <div class="algorithm">
+                <span>ALGORITHM</span>
+                <div class="jwt-select">
+                    <select id="algorithm-select">
+                        <option>Alg1</option>
+                        <option>Alg2</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <div class="algorithm-code">
             <div class="tab-nav">
@@ -37,10 +41,23 @@
                 </div>
             </div>
             <div class="tab-content">
-                <div class="box-content">
+                <div class="box-content textareaContainer">
                     <textarea placeholder="Write the encoded token here"></textarea>
                 </div>
-                <div class="box-content"></div>
+                <div class="box-content jwtResponseContainer">
+                    <div class="jwt-header">
+                        <p>Hey i'm a paragraph</p>
+                        <div class="json-header"></div>
+                    </div>
+                    <div class="jwt-payload">
+                        <p>Hey i'm a paragraph</p>
+                        <div class="json-payload"></div>
+                    </div>
+                    <div class="jwt-security">
+                        <p>Hey i'm a paragraph</p>
+                        <div class="json-security"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <button id="btn-test">Click</button>

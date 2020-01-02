@@ -3,31 +3,96 @@ body {
 }
 
 h1 {
-    color: red;
     text-align: center;
-    margin: 30px 0 30px;
+    margin-bottom: 30px;
 }
 
 .container {
     margin: auto;
     width: 100%;
+    padding: 0 15px;
     max-width: 1200px;
     border: 3px solid black;
     overflow: hidden;
 }
 
-.tab-nav .tab-link {
-    text-align: left;
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
+.warning {
+    padding: 15px;
+    background-color: #fff7c9;
+    margin: 0 0 40px 0;
 }
 
+.warning strong {
+    color: #786600;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.algorithm {
+    text-align: center;
+}
+
+.algorithm span {
+    font-weight: bold;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.jwt-select {
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+}
+
+.jwt-select select {
+    border-radius: 5px;
+    height: 38px;
+    width: 112px;
+    padding: 0px 10px;
+    font-size: 12px;
+    border: 1px solid #d8d8d8;
+    
+    /* Custom arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(https://img.icons8.com/android/24/000000/expand-arrow.png) 90% / 15% no-repeat;
+}
+
+/* Remove default arrow in Internet Explorer 10 and 11 */
+.jwt-select select::-ms-expand {
+    display: none;
+}
+
+/* Target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    select {
+        background: none\9;
+        padding: 5px\9;
+    }
+}
+
+.tab-nav,
+.tab-content {
+    padding-bottom: 30px;
+}
+
+.tab-nav .tab-link,
 .tab-content .box-content {
     text-align: left;
     float: left;
     width: 50%;
+    padding-right: 30px;
     box-sizing: border-box;
+}
+
+.tab-content .textareaContainer {
+    /* border-width: 0; */
+    border: 1px solid red;
 }
 
 .tab-content .box-content textarea {
@@ -35,4 +100,12 @@ h1 {
     margin: 0;
     padding: 0;
     width: 80%;
+}
+
+.tab-content .jwtResponseContainer {
+    border: 1px solid red;
+}
+
+.tab-content .jwtResponseContainer>* {
+    border: 1px solid blue;
 }
