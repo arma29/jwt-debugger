@@ -1,3 +1,8 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     font-family: 'fakt-web', "Helvetica Neue", Helvetica, Arial, sans-serif
 }
@@ -76,9 +81,27 @@ h1 {
     }
 }
 
+.algorithm-code {
+    margin-bottom: 30px;
+}
+
 .tab-nav,
 .tab-content {
     padding-bottom: 30px;
+    /* Parent same height as children */
+    overflow: auto; 
+    border: 1px solid green;
+}
+
+.tab-nav .tab-link a {
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+}
+
+.tab-nav .tab-link a small {
+    color: #979797;
+    font-size: 12px;
 }
 
 .tab-nav .tab-link,
@@ -99,7 +122,7 @@ h1 {
     /* border-width: 0; */
     margin: 0;
     padding: 0;
-    width: 80%;
+    width: 100%;
 }
 
 .tab-content .jwtResponseContainer {
