@@ -7,11 +7,6 @@ body {
     font-family: 'fakt-web', "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
 .container {
     margin: auto;
     width: 100%;
@@ -21,13 +16,18 @@ h1 {
     overflow: hidden;
 }
 
-.warning {
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info {
     padding: 15px;
     background-color: #fff7c9;
     margin: 0 0 40px 0;
 }
 
-.warning strong {
+.info strong {
     color: #786600;
 }
 
@@ -41,19 +41,19 @@ h1 {
     text-align: center;
 }
 
-.algorithm span {
+.algorithm__span {
     font-weight: bold;
     font-size: 12px;
     vertical-align: middle;
 }
 
-.jwt-select {
+.algorithm__select {
     display: inline-block;
     position: relative;
     margin-left: 10px;
 }
 
-.jwt-select select {
+.algorithm__select--custom-arrow {
     border-radius: 5px;
     height: 38px;
     width: 112px;
@@ -69,23 +69,23 @@ h1 {
 }
 
 /* Remove default arrow in Internet Explorer 10 and 11 */
-.jwt-select select::-ms-expand {
+.algorithm__select--custom-arrow::-ms-expand {
     display: none;
 }
 
 /* Target Internet Explorer 9 to undo the custom arrow */
 @media screen and (min-width:0\0) {
-    select {
+    .algorithm__select--custom-arrow {
         background: none\9;
         padding: 5px\9;
     }
 }
 
-.algorithm-code {
+.code {
     margin-bottom: 30px;
 }
 
-.tab-nav,
+.comm-process,
 .tab-content {
     padding-bottom: 30px;
     /* Parent same height as children */
@@ -93,18 +93,18 @@ h1 {
     border: 1px solid green;
 }
 
-.tab-nav .tab-link a {
+.comm-process .comm-process__title a {
     text-decoration: none;
     color: black;
     font-size: 28px;
 }
 
-.tab-nav .tab-link a small {
+.comm-process .comm-process__title a small {
     color: #979797;
     font-size: 12px;
 }
 
-.tab-nav .tab-link,
+.comm-process .comm-process__title,
 .tab-content .box-content {
     text-align: left;
     float: left;
@@ -113,22 +113,48 @@ h1 {
     box-sizing: border-box;
 }
 
-.tab-content .textareaContainer {
+.tab-content .textareaContainer .input{
+    padding: 20px;
     /* border-width: 0; */
     border: 1px solid red;
 }
 
-.tab-content .box-content textarea {
+.tab-content .box-content .input textarea {
     /* border-width: 0; */
     margin: 0;
     padding: 0;
     width: 100%;
 }
 
-.tab-content .jwtResponseContainer {
+/* .jwtResponseContainer {
+    border: 1px solid red;
+} */
+/* 
+.jwtResponseContainer>* {
+    border: 1px solid blue;
+} */
+
+.output {
     border: 1px solid red;
 }
 
-.tab-content .jwtResponseContainer>* {
-    border: 1px solid blue;
+.output p {
+    margin: 0;
+    color: black;
+    font-size: 12px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    line-height: 2.5;
+    padding: 0 10px;
+}
+
+/* should be a class modifier __p-no-border-top */
+.output .jwt-header p {
+    border-top: none;
+}
+
+.output span {
+    font-size: 10px;
+    color: #979797;
+    margin-left: 5px;
 }

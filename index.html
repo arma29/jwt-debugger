@@ -11,29 +11,29 @@
 <body>
     <div class="container">
         <h1>Teste H1</h1>
-        <div class="warning">
+        <div class="info">
             <strong>Warning:</strong> The boss will appear
         </div>
         <div class="selections">
             <div class="algorithm">
-                <span>ALGORITHM</span>
-                <div class="jwt-select">
-                    <select id="algorithm-select">
+                <span class="algorithm__span">ALGORITHM</span>
+                <div class="algorithm__select">
+                    <select class="algorithm__select--custom-arrow">
                         <option>Alg1</option>
                         <option>Alg2</option>
                     </select>
                 </div>
             </div>
         </div>
-        <div class="algorithm-code">
-            <div class="tab-nav">
-                <div class="tab-link">
+        <div class="code">    
+            <div class="comm-process">
+                <div class="comm-process__title">
                     <a href="#">
                         Encoded
                         <small>Encoded Pequeninin</small>
                     </a>
                 </div>
-                <div class="tab-link">
+                <div class="comm-process__title">
                     <a href="#">
                         Decoded
                         <small>Decoded Pequeninin</small>
@@ -42,20 +42,24 @@
             </div>
             <div class="tab-content">
                 <div class="box-content textareaContainer">
-                    <textarea placeholder="Write the encoded token here"></textarea>
+                    <div class="input">
+                        <textarea placeholder="Write the encoded token here"></textarea>
+                    </div>
                 </div>
                 <div class="box-content jwtResponseContainer">
-                    <div class="jwt-header">
-                        <p>Hey i'm a paragraph</p>
-                        <div class="json-header"></div>
-                    </div>
-                    <div class="jwt-payload">
-                        <p>Hey i'm a paragraph</p>
-                        <div class="json-payload"></div>
-                    </div>
-                    <div class="jwt-security">
-                        <p>Hey i'm a paragraph</p>
-                        <div class="json-security"></div>
+                    <div class="output">
+                        <div class="jwt-header">
+                            <p>HEADER:<span>ALGORITHM & TOKEN TYPE</span></p>
+                            <div class="json-header">Code right here</div>
+                        </div>
+                        <div class="jwt-payload">
+                            <p>PAYLOAD:<span>DATA</span></p>
+                            <div class="json-payload">Code right here</div>
+                        </div>
+                        <div class="jwt-security">
+                            <p>VERIFY SIGNATURE</p>
+                            <div class="json-security">Code right here</div>
+                        </div>
                     </div>
                 </div>
             </div>
