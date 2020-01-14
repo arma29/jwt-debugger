@@ -3,8 +3,8 @@ html {
     min-height: 100%;
 }
 
-body {
-    font-family: 'fakt-web', "Helvetica Neue", Helvetica, Arial, sans-serif
+body, button, textarea, input {
+    font-family: 'fakt-web', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .container {
@@ -105,7 +105,8 @@ h1 {
 }
 
 .comm-process .comm-process__title,
-.tab-content .box-content {
+.tab-content .box-content,
+.share__text , .btn-wrap {
     text-align: left;
     float: left;
     width: 50%;
@@ -158,3 +159,35 @@ h1 {
     color: #979797;
     margin-left: 5px;
 }
+
+.share > div {
+    border: 1px solid orange;
+}
+
+.share__text {
+    color: gray;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.share .btn-wrap {
+    padding-right: 0;
+}
+
+.btn-wrap__btn {
+    width: 100%;
+    background-color: #00b9f1;
+    color: white;
+    border-color: #00b9f1;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+}   
+
+.btn-wrap__text {
+    font-size: 15px;
+    vertical-align: middle;
+    letter-spacing: 2px;
+    line-height: 30px;
+    font-weight: bolder;
+}
+
