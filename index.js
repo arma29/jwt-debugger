@@ -1,5 +1,5 @@
 
-document.getElementById("btn-test").onclick = clickme;
+document.getElementsByClassName('btn-wrap__btn')[0].onclick = clickme;
 
 function clickme(){
     const text = document.getElementsByTagName("textarea")[0].value;

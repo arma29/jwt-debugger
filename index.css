@@ -183,7 +183,11 @@ h1 {
     padding: 15px 30px;
 }   
 
-.btn-wrap__text {
+.btn-wrap__btn:active{
+    background-color: #33c2ee;
+}
+
+.btn-wrap__span {
     font-size: 15px;
     vertical-align: middle;
     letter-spacing: 2px;
