@@ -3,7 +3,7 @@ html {
     min-height: 100%;
 }
 
-body, button, textarea, input {
+body, button, textarea, textarea__input {
     font-family: 'fakt-web', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -114,17 +114,29 @@ h1 {
     box-sizing: border-box;
 }
 
-.tab-content .textareaContainer .input{
-    padding: 20px;
+.tab-content .textareaContainer .textarea__input{
+    padding: 10px;
     /* border-width: 0; */
     border: 1px solid red;
+    height: 450px
 }
 
-.tab-content .box-content .input textarea {
+.tab-content .box-content .textarea__input textarea {
     /* border-width: 0; */
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none; /*remove the resize handle on the bottom right*/
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
 }
 
 /* .jwtResponseContainer {
