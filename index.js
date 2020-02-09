@@ -7,15 +7,28 @@ function getTextareaValue(){
     // Separar em 3 partes (jwt) , splitted by dot '.'
     // Base64 Decode (via atob() function )
     // Mostrar em forma de JSON
+    
+    validateToken(text);
 
-    console.log(atob(text.split('.')[2]));
+    console.log(text.split('.'));
 }
 
-function isEachFileAProgram(){
-    const answer = "For JS, Yes, this prevents one file interrupt the whole program => Error handler"
-    return answer;   
-}
+function validateToken(token){
+    const splittedToken = token.split('.');
+    const element = document.querySelector("div.share__text");
+    if(splittedToken.length != 3){
+        element.className = "share__text js-share__text--wrong";
+        element.innerText = "WRONG FDP"
+        return;
+    }
 
-function nextEpisode(){
-    const answer = "Functions, CH2, YOU DON'T KNOW JS"
+    try {
+        console.log(atob(splittedToken[0]) + '|');
+        console.log(atob(splittedToken[1]) + '|');
+        console.log(atob(splittedToken[2]) + '|');
+    } catch (error) {
+        element.className = "share__text js-share__text--wrong";
+        element.innerText = "Not base64"
+        return;
+    }
 }

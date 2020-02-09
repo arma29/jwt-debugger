@@ -127,6 +127,8 @@ h1 {
     overflow: auto;
     outline: none;
 
+    font-size: 20px;
+    color: #d63aff;
     
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -181,6 +183,18 @@ h1 {
     font-size: 30px;
     padding-top: 10px;
 }
+
+.js-share__text--wrong {
+    color: orange;
+}
+
+.js-share__text--invalid {
+    color:#FF0000;
+}
+
+.js-share__text--correct {
+    color: #00B9F1;
+}   
 
 .share .btn-wrap {
     padding-right: 0;
