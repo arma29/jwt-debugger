@@ -42,23 +42,34 @@
             </div>
             <div class="tab-content">
                 <div class="box-content textareaContainer">
-                    <div class="textarea__input">
-                        <textarea placeholder="Write the encoded token here"></textarea>
+                    <div class="output">
+                        <div class="textarea__input">
+                            <textarea placeholder="Write the encoded token here"></textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="box-content jwtResponseContainer">
                     <div class="output">
                         <div class="jwt-header">
                             <p>HEADER:<span>ALGORITHM & TOKEN TYPE</span></p>
-                            <div contenteditable="true" class="json-header__code">Code right here</div>
+                            <div contenteditable="true">Code right here</div>
                         </div>
                         <div class="jwt-payload">
                             <p>PAYLOAD:<span>DATA</span></p>
-                            <div contenteditable="true" class="json-payload__code">Code right here</div>
+                            <div contenteditable="true">Code right here</div>
                         </div>
                         <div class="jwt-security">
                             <p>VERIFY SIGNATURE</p>
-                            <div contenteditable="true"class="json-security__code">Code right here</div>
+                            <div class="jwt-security__precode">
+                                <div class="jwt-security__code">
+                                    <span id="js-jwt-security__span">HMACSHA256</span>
+                                    (<br>
+                                    &emsp; base64UrlEncode(header) + "." +<br> 
+                                    &emsp; base64UrlEncode(payload),<br>
+                                    &emsp;&nbsp;<input type="text" id="js-json-security__secret" class="json-security__secret" value="your-secret"><br>
+                                    )
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,7 +81,7 @@
             </div>
             <div class="btn-wrap">
                 <button class="btn-wrap__btn btn-wrap__span">
-                    <span>SHARE JWT </span>
+                    <span>CHECK TOKEN </span>
                 </button>
             </div>
         </div>
