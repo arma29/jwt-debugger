@@ -1,3 +1,4 @@
+const signatureState = document.querySelector("div.share__text");
 
 document.getElementsByClassName('btn-wrap__btn')[0].onclick = getTextareaValue;
 
@@ -8,27 +9,35 @@ function getTextareaValue(){
     // Base64 Decode (via atob() function )
     // Mostrar em forma de JSON
     
-    validateToken(text);
+    if(!isTokenValid(text)){
+        //modify class
+        signatureState.className = "share__text js-share__text--wrong";
+        signatureState.innerText = "Invalid Signature"
+    }
 
     console.log(text.split('.'));
 }
 
-function validateToken(token){
+function isTokenValid(token){
     const splittedToken = token.split('.');
-    const element = document.querySelector("div.share__text");
-    if(splittedToken.length != 3){
-        element.className = "share__text js-share__text--wrong";
-        element.innerText = "WRONG FDP"
-        return;
-    }
+    return hasBase64Format(splittedToken) && isWellFormated(splittedToken);
+}
 
-    try {
-        console.log(atob(splittedToken[0]) + '|');
-        console.log(atob(splittedToken[1]) + '|');
-        console.log(atob(splittedToken[2]) + '|');
-    } catch (error) {
-        element.className = "share__text js-share__text--wrong";
-        element.innerText = "Not base64"
-        return;
+function isWellFormated(splittedToken){
+    let result = true;
+    if(splittedToken.length != 3){
+        result = false;
     }
+    return result;
+}
+
+function hasBase64Format(splittedToken){
+    let result = true;
+    try { 
+        atob(splittedToken[0]);
+        atob(splittedToken[1]);
+    } catch (error) {
+        result = false;
+    }
+    return result;
 }
