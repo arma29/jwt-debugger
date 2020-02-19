@@ -3,39 +3,45 @@ const textArea = document.getElementsByTagName("textarea")[0];
 const validateBtn = document.getElementsByClassName('btn-wrap__btn')[0];
 const algorithmSpan = document.getElementById('js-jwt-security__span');
 const algorithmSelector = document.getElementsByTagName('select')[0];
+const jwtHeaderCodeDiv = document.getElementsByClassName('jwt-header__code')[0];
+const jwtPayloadCodeDiv = document.getElementsByClassName('jwt-payload__code')[0];
 const jwtSecurityCodeDiv = document.getElementsByClassName('jwt-security__code')[0];
 
 window.onload = function(){
     updateAlgorithmSpan();
-    let algorithmText = `(<br>
-        base64UrlEncode(header) + "." + 
-        base64UrlEncode(payload),
-    )`;
-    // jwtSecurityCodeDiv.innerHTML = algorithmSpan.innerHTML +  algorithmText;
-
 };
 
 algorithmSelector.onchange = function() {
     updateAlgorithmSpan();
 }
 
-validateBtn.onclick = getTextareaValue;
+validateBtn.onclick = function(){
+    let token = textArea.value;
+    changeSignatureState(token);
+    let tokenObject = getTokenObject(token);
+    updateCodeDiv(jwtHeaderCodeDiv,tokenObject.header);
+    updateCodeDiv(jwtPayloadCodeDiv,tokenObject.payload);
+};
 
+function getTokenObject(token){
+    let splittedToken = token.split('.');
+    let obj = {
+        header : JSON.parse(atob(splittedToken[0])),
+        payload : JSON.parse(atob(splittedToken[1])),
+        security : splittedToken[2],
+    };
+    return obj;
+}
 function updateAlgorithmSpan() {
     algorithmSpan.innerText = algorithmSelector.value;
 }
 
-function getTextareaValue(){
-    let text = textArea.value;
-    // Separar em 3 partes (jwt) , splitted by dot '.'
-    // Base64 Decode (via atob() function )
-    // Mostrar em forma de JSON
-    
-    changeSignatureState(text);
+function updateCodeDiv(div, code){
+    div.innerHTML = JSON.stringify(code,undefined, 4);
 }
 
-function changeSignatureState(text) {
-    if (!isTokenValid(text)) {
+function changeSignatureState(token) {
+    if (!isTokenValid(token)) {
         signatureState.className = "share__text js-share__text--invalid";
         signatureState.innerText = "Invalid Signature";
     }

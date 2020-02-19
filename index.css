@@ -3,10 +3,21 @@ html {
     min-height: 100%;
 }
 
-body, button, textarea, textarea__input {
+body, button, textarea, .textarea__input, pre {
     font-family: 'fakt-web', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+pre {
+    margin: 0;
+    -webkit-user-modify: none;
+    overflow-wrap: break-word;
+    -webkit-line-break: none;
+}
 .container {
     margin: auto;
     width: 100%;
@@ -16,10 +27,6 @@ body, button, textarea, textarea__input {
     overflow: hidden;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
-}
 
 .info {
     padding: 15px;
@@ -168,14 +175,25 @@ h1 {
     margin-left: 5px;
 }
 
-.jwt-security__precode {
-    background: #f5f5f5;
-    line-height: 1.8;
-    font-size: 18px;
-    color: #00b9f1;
-    /* font-family: 'Roboto Mono',Menlo; */
+pre {
+
 }
 
+.jwt-header__precode,
+.jwt-payload__precode,
+.jwt-security__precode{
+    line-height: 1.8;
+    font-size: 16px;
+    color: #d63aff;
+
+}
+
+.jwt-security__precode {
+    background: #f5f5f5;
+}
+
+.jwt-header__code,
+.jwt-payload__code,
 .jwt-security__code {
     padding: 20px;
 }
