@@ -175,17 +175,12 @@ pre {
     margin-left: 5px;
 }
 
-pre {
-
-}
-
 .jwt-header__precode,
 .jwt-payload__precode,
 .jwt-security__precode{
     line-height: 1.8;
     font-size: 16px;
     color: #d63aff;
-
 }
 
 .jwt-security__precode {
