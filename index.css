@@ -23,7 +23,7 @@ pre {
     width: 100%;
     padding: 0 15px;
     max-width: 1200px;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     overflow: hidden;
 }
 
@@ -32,6 +32,7 @@ pre {
     padding: 15px;
     background-color: #fff7c9;
     margin: 0 0 40px 0;
+    text-align: center;
 }
 
 .info strong {
@@ -63,7 +64,7 @@ pre {
 .algorithm__select--custom-arrow {
     border-radius: 5px;
     height: 38px;
-    width: 112px;
+    width: 132px;
     padding: 0px 10px;
     font-size: 12px;
     border: 1px solid #d8d8d8;
@@ -96,7 +97,7 @@ pre {
 .tab-content {
     padding-bottom: 30px;
     overflow: auto; 
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
 }
 
@@ -108,7 +109,7 @@ pre {
 
 .comm-process__title a small {
     color: #979797;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .comm-process__title,
@@ -149,7 +150,7 @@ pre {
     height: 100%;
 }
 .output {
-    border: 1px solid red;
+    border: 1px solid #979797;
     height: 100%;
 }
 
@@ -192,9 +193,6 @@ pre {
 .jwt-security__code {
     padding: 20px;
 }
-.share > div {
-    border: 1px solid orange;
-}
 
 .share__text {
     color: gray;
@@ -217,11 +215,11 @@ pre {
 
 .share {
     overflow: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .share .btn-wrap {
-    padding-right: 0;
+    padding-right: 30px;
 }
 
 .btn-wrap__btn {
@@ -232,6 +230,7 @@ pre {
     border: 1px solid transparent;
     padding: 15px 30px;
     cursor: pointer;
+    border-radius: 5px;
 }   
 
 .btn-wrap__btn:active, .btn-wrap__btn:hover{

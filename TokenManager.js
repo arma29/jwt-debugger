@@ -10,7 +10,7 @@ function getTokenObject(token){
 
 function isTokenValid(token){
     const splittedToken = token.split('.');
-    return hasBase64Format(splittedToken) 
+    return isBase64URLEncoded(splittedToken) 
         && isWellFormated(splittedToken);
 }
 
@@ -21,11 +21,12 @@ function isWellFormated(splittedToken){
     return true;
 }
 
-function hasBase64Format(splittedToken){
+function isBase64URLEncoded(splittedToken){
     let result = true;
     try { 
-        atob(splittedToken[0]);
-        atob(splittedToken[1]);
+        atob(toBase64(splittedToken[0]));
+        atob(toBase64(splittedToken[1]));
+        atob(toBase64(splittedToken[2]));
     } catch (error) {
         result = false;
     }

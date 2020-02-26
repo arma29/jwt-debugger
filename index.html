@@ -10,17 +10,16 @@
 
 <body>
     <div class="container">
-        <h1>Teste H1</h1>
+        <h1>Debugger</h1>
         <div class="info">
-            <strong>Warning:</strong> The boss will appear
+            <strong>Warning:</strong> We do not record tokens, all validation and debugging is done on the client side.
         </div>
         <div class="selections">
             <div class="algorithm">
                 <span class="algorithm__span">ALGORITHM</span>
                 <div class="algorithm__select">
                     <select class="algorithm__select--custom-arrow">
-                        <option>Alg1</option>
-                        <option>Alg2</option>
+                        <option>HMACSHA256</option>
                     </select>
                 </div>
             </div>
@@ -30,13 +29,13 @@
                 <div class="comm-process__title">
                     <a href="#">
                         Encoded
-                        <small>Encoded Pequeninin</small>
+                        <small>PASTE A TOKEN HERE</small>
                     </a>
                 </div>
                 <div class="comm-process__title">
                     <a href="#">
                         Decoded
-                        <small>Decoded Pequeninin</small>
+                        <small>CHECK DE DECODED TOKEN HERE</small>
                     </a>
                 </div>
             </div>
@@ -70,7 +69,7 @@
                                     (<br>
                                     &emsp; base64UrlEncode(header) + "." +<br> 
                                     &emsp; base64UrlEncode(payload),<br>
-                                    &emsp;&nbsp;<input type="text" id="js-json-security__secret" class="json-security__secret" value="your-secret"><br>
+                                    &emsp;&nbsp;<input type="text" id="js-json-security__secret" class="json-security__secret" value="your-256-bit-secret"><br>
                                     )
                                 </div>
                             </div>

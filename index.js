@@ -1,5 +1,5 @@
-const signatureState = document.querySelector("div.share__text");
-const textArea = document.getElementsByTagName("textarea")[0];
+const signatureState = document.querySelector('div.share__text');
+const textArea = document.getElementsByTagName('textarea')[0];
 const validateBtn = document.getElementsByClassName('btn-wrap__btn')[0];
 const algorithmSpan = document.getElementById('js-jwt-security__span');
 const algorithmSelector = document.getElementsByTagName('select')[0];
@@ -26,20 +26,20 @@ validateBtn.onclick = function(){
         updateCodeDiv(jwtPayloadCodeDiv,tokenObject.payload);
     }
     else{
-        signatureState.className = "share__text js-share__text--invalid";
-        signatureState.innerText = "Invalid Token";
+        signatureState.className = 'share__text js-share__text--invalid';
+        signatureState.innerText = 'Invalid Token';
     }
 };
 
 
 function changeSignatureState(token,secret) {
     if (!isSignatureValid(token,secret)) {
-        signatureState.className = "share__text js-share__text--invalid";
-        signatureState.innerText = "Invalid Signature";
+        signatureState.className = 'share__text js-share__text--invalid';
+        signatureState.innerText = 'Invalid Signature';
     }
     else {
-        signatureState.className = "share__text js-share__text--correct";
-        signatureState.innerText = "Signature Verified";
+        signatureState.className = 'share__text js-share__text--correct';
+        signatureState.innerText = 'Signature Verified';
     }
 }
 
