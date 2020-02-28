@@ -7,6 +7,9 @@ const jwtHeaderCodeDiv = document.getElementsByClassName('jwt-header__code')[0];
 const jwtPayloadCodeDiv = document.getElementsByClassName('jwt-payload__code')[0];
 const jwtSecurityCodeDiv = document.getElementsByClassName('jwt-security__code')[0];
 const jwtSecret = document.getElementById('js-json-security__secret');
+const encodedDiv = document.getElementsByClassName('comm-process__title')[0];
+const decodedDiv = document.getElementsByClassName('comm-process__title')[1];
+const mediaQuery = window.matchMedia('(max-width:768px)');
 
 window.onload = function(){
     updateAlgorithmSpan();
@@ -15,6 +18,28 @@ window.onload = function(){
 algorithmSelector.onchange = function() {
     updateAlgorithmSpan();
 };
+
+function myFunction(){
+    if(mediaQuery.matches){
+        encodedDiv.className = 'comm-process__title js-comm-process--current';
+        encodedDiv.firstElementChild.addEventListener('click', function(){
+            encodedDiv.className = 'comm-process__title js-comm-process--current';
+            decodedDiv.className = 'comm-process__title';
+            // TODO: Show and Hide content
+        });
+        decodedDiv.firstElementChild.addEventListener('click',function(){
+            encodedDiv.className = 'comm-process__title';
+            decodedDiv.className = 'comm-process__title js-comm-process--current';
+            // TODO: Show and Hide content
+        });
+    }
+    else{
+        encodedDiv.className = 'comm-process__title';
+        decodedDiv.className = 'comm-process__title';
+    }
+}
+
+mediaQuery.addEventListener('change', myFunction);
 
 validateBtn.onclick = function(){
     let token = textArea.value;

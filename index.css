@@ -42,7 +42,6 @@ pre {
 .selections {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
 }
 
 .algorithm {
@@ -90,26 +89,57 @@ pre {
 }
 
 .code {
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .comm-process,
 .tab-content {
-    padding-bottom: 30px;
+    margin-bottom: 20px;
     overflow: auto; 
+    width: auto; 
     /* border: 1px solid green; */
     display: flex;
 }
 
+@media (min-width:768px){
+    .tab-content {
+        margin-right: -30px;
+    }
+
+    div.comm-process > div:nth-child(2) {
+        padding-left: 15px;
+    }
+}
+
+
+
 .comm-process__title a {
     text-decoration: none;
     color: black;
-    font-size: 28px;
+    font-size: 24px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+/* Se a largura for maior que 768, faça isso */
+@media (min-width:768px) { 
+    .comm-process__title a {
+        font-size: 28px;
+        padding-bottom: 0;
+        cursor: default;    
+    }
 }
 
 .comm-process__title a small {
     color: #979797;
     font-size: 11px;
+    display: none;
+}
+
+@media (min-width:992px) {
+    .comm-process__title a small {
+        display: inline-block;
+    }
 }
 
 .comm-process__title,
@@ -123,15 +153,33 @@ pre {
     box-sizing: border-box;
 }
 
+.box-content {
+    display: flex;
+}
+
+.comm-process__title {
+    text-align: center;
+    padding-right: 0;
+}
+
+/* Se a largura for maior que 768px... */
+@media (min-width:768px) {
+    .comm-process__title {
+        text-align: left;
+    }
+}
+
+.js-comm-process--current {
+    padding-bottom: 5px;
+    border-bottom: 6px solid #fb015b;
+}
+
 .textarea__input{
     padding: 10px;
-    /* border-width: 0; */
-    /* border: 1px solid red; */
-    height: 94%;
+    height: 95%;
 }
 
 .textarea__input textarea {
-    /* border-width: 0; */
     border: none;
     overflow: auto;
     outline: none;
@@ -151,7 +199,7 @@ pre {
 }
 .output {
     border: 1px solid #979797;
-    height: 100%;
+    width: 100%;
 }
 
 .output p {
