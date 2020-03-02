@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -98,13 +102,17 @@ pre {
     overflow: auto; 
     width: auto; 
     /* border: 1px solid green; */
-    display: flex;
+    display: block;
 }
 
 @media (min-width:768px){
     .tab-content {
+        zoom: 1;
+        width: auto;
         margin-right: -30px;
+        display: flex;
     }
+
 
     div.comm-process > div:nth-child(2) {
         padding-left: 15px;
@@ -143,7 +151,6 @@ pre {
 }
 
 .comm-process__title,
-.box-content,
 .share__text, 
 .btn-wrap {
     text-align: left;
@@ -155,6 +162,21 @@ pre {
 
 .box-content {
     display: flex;
+    height: 0;
+    overflow: hidden;
+}
+
+@media (min-width:768px) {
+    .box-content {
+        float: left;
+        width: 50%;
+        padding-right: 30px;
+        height: auto;
+    }
+}
+
+.js-box-content--current {
+    height: auto;
 }
 
 .comm-process__title {
@@ -197,11 +219,15 @@ pre {
     width: 100%;
     height: 100%;
 }
+
 .output {
     border: 1px solid #979797;
     width: 100%;
 }
 
+.textarea__container {
+
+}
 .output p {
     margin: 0;
     color: black;
