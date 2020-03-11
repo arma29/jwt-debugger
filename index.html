@@ -7,14 +7,15 @@
     <title>
         Teste
     </title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
     <div class="container">
         <h1>Debugger</h1>
         <div class="info">
-            <strong>Warning:</strong> We do not record tokens, all validation and debugging is done on the client side.
+            <strong class="info__strong">Warning:</strong> We do not record tokens, all validation and debugging is done
+            on the client side.
         </div>
         <div class="selections">
             <div class="algorithm">
@@ -29,21 +30,21 @@
         <div class="code">
             <div class="comm-process">
                 <div class="comm-process__title">
-                    <a href="#">
+                    <a class="comm-process__a" href="#">
                         Encoded
-                        <small>PASTE A TOKEN HERE</small>
+                        <small class="comm-process__small">PASTE A TOKEN HERE</small>
                     </a>
                 </div>
                 <div class="comm-process__title">
-                    <a href="#">
+                    <a class="comm-process__a" href="#">
                         Decoded
-                        <small>CHECK DE DECODED TOKEN HERE</small>
+                        <small class="comm-process__small">CHECK DE DECODED TOKEN HERE</small>
                     </a>
                 </div>
             </div>
             <div class="tab-content">
                 <div class="box-content">
-                    <div class="output textarea__container">
+                    <div class="output">
                         <div class="textarea__input">
                             <textarea placeholder="Write the encoded token here"></textarea>
                         </div>
@@ -52,26 +53,27 @@
                 <div class="box-content">
                     <div class="output">
                         <div class="jwt-header">
-                            <p>HEADER:<span>ALGORITHM & TOKEN TYPE</span></p>
+                            <p class="output__p output__p-no-border-top">HEADER:<span>ALGORITHM & TOKEN TYPE</span></p>
                             <div class="jwt-header__precode">
                                 <pre contenteditable="true" class="jwt-header__code">Code right here</pre>
                             </div>
                         </div>
                         <div class="jwt-payload">
-                            <p>PAYLOAD:<span>DATA</span></p>
+                            <p class="output__p">PAYLOAD:<span>DATA</span></p>
                             <div class="jwt-payload__precode">
                                 <pre contenteditable="true" class="jwt-payload__code">Code right here</pre>
                             </div>
                         </div>
                         <div class="jwt-security">
-                            <p>VERIFY SIGNATURE</p>
+                            <p class="output__p">VERIFY SIGNATURE</p>
                             <div class="jwt-security__precode">
                                 <div class="jwt-security__code">
                                     <span id="js-jwt-security__span">HMACSHA256</span>
                                     (<br>
-                                    &emsp; base64UrlEncode(header) + "." +<br> 
+                                    &emsp; base64UrlEncode(header) + "." +<br>
                                     &emsp; base64UrlEncode(payload),<br>
-                                    &emsp;&nbsp;<input type="text" id="js-json-security__secret" class="json-security__secret" value="your-256-bit-secret"><br>
+                                    &emsp;&nbsp;<input type="text" id="js-json-security__secret"
+                                        class="json-security__secret" value="your-256-bit-secret"><br>
                                     )
                                 </div>
                             </div>
@@ -85,8 +87,8 @@
                 Waiting Response
             </div>
             <div class="btn-wrap">
-                <button class="btn-wrap__btn btn-wrap__span">
-                    <span>CHECK TOKEN </span>
+                <button class="btn-wrap__btn">
+                    <span class="btn-wrap__span">CHECK TOKEN </span>
                 </button>
             </div>
         </div>
@@ -95,8 +97,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac-sha256.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/enc-base64.min.js"></script>
     <!-- <script src="base64.js"></script> -->
-    <script src="TokenManager.js"></script>
-    <script src="index.js"></script>
+    <script src="js/TokenManager.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

@@ -7,7 +7,11 @@ html {
     min-height: 100%;
 }
 
-body, button, textarea, .textarea__input, pre {
+body,
+button,
+textarea,
+.textarea__input,
+pre {
     font-family: 'fakt-web', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -22,12 +26,12 @@ pre {
     overflow-wrap: break-word;
     -webkit-line-break: none;
 }
+
 .container {
     margin: auto;
     width: 100%;
     padding: 0 15px;
     max-width: 1200px;
-    /* border: 3px solid black; */
     overflow: hidden;
 }
 
@@ -39,7 +43,7 @@ pre {
     text-align: center;
 }
 
-.info strong {
+.info__strong {
     color: #786600;
 }
 
@@ -71,8 +75,7 @@ pre {
     padding: 0px 10px;
     font-size: 12px;
     border: 1px solid #d8d8d8;
-    
-    /* Custom arrow */
+
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -99,13 +102,12 @@ pre {
 .comm-process,
 .tab-content {
     margin-bottom: 20px;
-    overflow: auto; 
-    width: auto; 
-    /* border: 1px solid green; */
+    overflow: auto;
+    width: auto;
     display: block;
 }
 
-@media (min-width:768px){
+@media (min-width:768px) {
     .tab-content {
         zoom: 1;
         width: auto;
@@ -114,14 +116,14 @@ pre {
     }
 
 
-    div.comm-process > div:nth-child(2) {
+    div.comm-process>div:nth-child(2) {
         padding-left: 15px;
     }
 }
 
 
 
-.comm-process__title a {
+.comm-process__a {
     text-decoration: none;
     color: black;
     font-size: 24px;
@@ -129,34 +131,32 @@ pre {
     cursor: pointer;
 }
 
-/* Se a largura for maior que 768, faça isso */
-@media (min-width:768px) { 
-    .comm-process__title a {
+@media (min-width:768px) {
+    .comm-process__a {
         font-size: 28px;
         padding-bottom: 0;
-        cursor: default;    
+        cursor: default;
     }
 }
 
-.comm-process__title a small {
+.comm-process__small {
     color: #979797;
     font-size: 11px;
     display: none;
 }
 
 @media (min-width:992px) {
-    .comm-process__title a small {
+    .comm-process__small {
         display: inline-block;
     }
 }
 
 .comm-process__title,
-.share__text, 
+.share__text,
 .btn-wrap {
     text-align: left;
     float: left;
     width: 50%;
-    padding-right: 30px;
     box-sizing: border-box;
 }
 
@@ -184,7 +184,6 @@ pre {
     padding-right: 0;
 }
 
-/* Se a largura for maior que 768px... */
 @media (min-width:768px) {
     .comm-process__title {
         text-align: left;
@@ -196,7 +195,7 @@ pre {
     border-bottom: 6px solid #fb015b;
 }
 
-.textarea__input{
+.textarea__input {
     padding: 10px;
     height: 95%;
 }
@@ -208,12 +207,13 @@ pre {
 
     font-size: 20px;
     color: #d63aff;
-    
+
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 
-    resize: none; /*remove the resize handle on the bottom right*/
+    resize: none;
+    /*remove the resize handle on the bottom right*/
     margin: 0;
     padding: 0;
     width: 100%;
@@ -225,10 +225,13 @@ pre {
     width: 100%;
 }
 
-.textarea__container {
-
+@media (max-width:768px) {
+    .textarea__input {
+        height: 400px;
+    }
 }
-.output p {
+
+.output__p {
     margin: 0;
     color: black;
     font-size: 12px;
@@ -238,13 +241,12 @@ pre {
     padding: 0 10px;
 }
 
-/* should be a class modifier __p-no-border-top */
-.jwt-header p {
+.output__p-no-border-top {
     border-top: none;
 }
 
 .jwt-header span,
-.jwt-payload span{
+.jwt-payload span {
     font-size: 10px;
     color: #979797;
     margin-left: 5px;
@@ -252,7 +254,7 @@ pre {
 
 .jwt-header__precode,
 .jwt-payload__precode,
-.jwt-security__precode{
+.jwt-security__precode {
     line-height: 1.8;
     font-size: 16px;
     color: #d63aff;
@@ -271,7 +273,14 @@ pre {
 .share__text {
     color: gray;
     font-size: 30px;
-    padding-top: 10px;
+    padding-top: 6px;
+}
+
+@media (max-width:768px) {
+    .share__text {
+        font-size: 22px;
+        padding-top: 11px;
+    }
 }
 
 .js-share__text--wrong {
@@ -279,42 +288,49 @@ pre {
 }
 
 .js-share__text--invalid {
-    color:#FF0000;
+    color: #FF0000;
 }
 
 .js-share__text--correct {
     color: #00B9F1;
-}   
+}
 
 
 .share {
     overflow: auto;
-    /* border: 1px solid red; */
 }
 
-.share .btn-wrap {
-    padding-right: 30px;
+.btn-wrap {
+    padding-left: 15px;
 }
 
 .btn-wrap__btn {
+    height: 50px;
     width: 100%;
     background-color: #00b9f1;
     color: white;
     border-color: #00b9f1;
     border: 1px solid transparent;
-    padding: 15px 30px;
     cursor: pointer;
     border-radius: 5px;
-}   
+}
 
-.btn-wrap__btn:active, .btn-wrap__btn:hover{
+.btn-wrap__btn:active,
+.btn-wrap__btn:hover {
     background-color: #33c2ee;
 }
 
 .btn-wrap__span {
-    font-size: 15px;
+    font-size: 18px;
     vertical-align: middle;
     letter-spacing: 2px;
     line-height: 30px;
     font-weight: bolder;
+    white-space: nowrap;
+}
+
+@media (max-width:768px) {
+    .btn-wrap__span {
+        font-size: 14px;
+    }
 }
